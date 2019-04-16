@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录页面</title>
+{#        <link rel="stylesheet" href="/static/bootstrap-3.3.7/css/bootstrap.min.css">#}
+    <link rel="stylesheet" href="/static/css/login.css">
+</head>
+
+<body>
+<div class="main">
+    <div class="login">
+        <h1>资产统计系统</h1>
+        <div class="inset login-box">
+            <!--start-main-->
+            <form action="" method="post">
+                {% csrf_token %}
+
+                <div>
+                    <h2>管理登录</h2>
+                    <span><label>用户名</label></span>
+                    <input type="text" name="username" class="textbox" placeholder="请输入用户名">
+                </div>
+                <div>
+                    <span><label>密码</label></span>
+                    <span><input type="password" name="password" class="password" placeholder="请输入密码"></span>
+
+                </div>
+                <div class="sign">
+                        <p>
+                            <input type="submit" value="登录" class="submit">
+
+                        </p>
+                     <p class="login-error" style="color: red">{{ error_msg }}</p>
+
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--//end-main-->
+</div>
+
+<div class="copy-right">
+    <p>&copy; 2018 Ethos Login Form. All Rights Reserved</p>
+
+</div>
+{% load static %}
+
+<script src="../static/js/jquery-3.3.1.min.js"></script>
+<script src="{% static 'js/login.js' %}"></script>
+</body>
+</html>

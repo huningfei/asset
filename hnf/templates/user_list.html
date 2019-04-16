@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+    <div class="luffy-container">
+        <div class="btn-group" style="margin: 5px 0">
+            <a class="btn btn-default" href="/user/add/">
+                <i class="fa fa-plus-square" aria-hidden="true"></i> 添加用户
+            </a>
+            <a class="btn btn-default" href="/user/import/">
+                <i class="fa fa-file-excel-o" aria-hidden="true"></i> 批量导入
+            </a>
+        </div>
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>用户名</th>
+{#                <th>密码</th>#}
+                <th>部门</th>
+                <th>编辑</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for row in data_list %}
+                <tr>
+                    <td>{{ row.id }}</td>
+                    <td>{{ row.username }}</td>
+{#                    <td>{{ row.password }}</td>#}
+                    <td>{{ row.department }}</td>
+
+                    <td>
+                        <a style="color: #333333;" href="/user/edit/{{ row.id }}/">
+                            <i class="fa fa-edit" aria-hidden="true"></i></a>
+                        |
+                        <a style="color: #d9534f;" href="/user/del/{{ row.id }}/"><i class="fa fa-trash-o"></i></a>
+                    </td>
+
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

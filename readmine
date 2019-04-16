@@ -1,0 +1,22 @@
+
+1 数据库字段更改在web页面-------
+2 搜索功能--利用 data_list=models.Asset.objects.filter(leader__contains=q) 模糊查询
+3 数据库密码存储加密功能--解决利用auth模块
+4 分页功能
+5 登陆和注销，并且必须登陆才可以查看--利用auth模块认证
+6 删除要有提示
+
+
+
+
+
+
+
+
+
+
+后台登陆用户名admin
+密码 root1234
+
+普通用户 huningfei
+hnf12345
